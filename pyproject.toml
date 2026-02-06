@@ -1,0 +1,11 @@
+[project]
+name = "mercury"
+version = "0.0.1.dev1"
+description = "A heavy, silvery liquid metal, toxic yet useful."
+authors = [{name = "Laxmikant Suryavanshi"}]
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]>=0.128.0",
+    "prometheus-fastapi-instrumentator>=7.1.0",
+    "structlog>=25.5.0",
+]
