@@ -1,0 +1,18 @@
+[Unit]
+Description=Mercury FastAPI Application
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/mercury
+EnvironmentFile=/home/pi/mercury/.env
+ExecStart=/home/pi/mercury/.venv/bin/uvicorn app:app --log-level critical
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/var/log/mercury/access.log
+StandardError=append:/var/log/mercury/error.log
+
+[Install]
+WantedBy=multi-user.target
